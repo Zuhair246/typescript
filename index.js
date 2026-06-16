@@ -42,5 +42,23 @@ console.log(result);
 function greet(name) {
     return `Hello! ${name}👋`;
 }
-console.log(greet('Zuhair'));
+//console.log(greet('Zuhair'));
+function isEven(num) {
+    return num % 2 === 0;
+}
+//console.log(isEven(11));
+//console.log(isEven(36));
+/*❌function subtract(num1: number, num2: number): number {
+    return 'hello';
+}                         expected return value is number, so string can't be assingned to number.
+    */
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+console.log(multiply(5, 6));
+function divide(num1, num2) {
+    return (num1 / num2);
+}
+const res = divide(7, 2);
+console.log(Math.round(res));
 //# sourceMappingURL=index.js.map

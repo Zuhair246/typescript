@@ -9,6 +9,7 @@ isStudent = true;
 
 //console.log(`name: ${name}, age: ${age}, student: ${isStudent}`);
 
+
 //Array declaration
 let students: number[] = [6,2,9] ;
 //console.log(students);
@@ -24,6 +25,7 @@ let data: (string | boolean)[] = [
     true
 ];
 //console.log(data);
+
 
 //Object declaration
 let student: {
@@ -50,9 +52,30 @@ function add(a:number, b:number) {
 }
 const result = add(5,7);
 console.log(result);
+
 //Function declaration with return type
 function greet(name: string): string {
     return `Hello! ${name}👋`
 }
-console.log(greet('Zuhair'));
+//console.log(greet('Zuhair'));
 
+function isEven(num: number): boolean {
+    return num%2 === 0;
+}
+//console.log(isEven(11));
+//console.log(isEven(36));
+
+/*❌function subtract(num1: number, num2: number): number {
+    return 'hello';
+}                         expected return value is number, so string can't be assingned to number.
+    */
+
+function multiply(num1: number, num2: number): number {
+    return num1*num2;
+}
+console.log(multiply(5,6));
+function divide(num1: number, num2: number): number {
+    return (num1/num2);
+}
+const res = divide(7,2);
+console.log(Math.round(res));
