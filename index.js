@@ -61,4 +61,15 @@ function divide(num1, num2) {
 }
 const res = divide(7, 2);
 console.log(Math.round(res));
+//Optional Parameters - Sometimes parameter may not exist.
+function call(name) {
+    console.log(name || 'John');
+}
+call(); //No problem if argument didn't passed, because we made it optional;
+call('Richu');
+function salute(name = 'Guest') {
+    console.log(`hi, ${name}`);
+}
+salute();
+salute('Pathu');
 //# sourceMappingURL=index.js.map

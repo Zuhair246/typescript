@@ -74,8 +74,22 @@ function multiply(num1: number, num2: number): number {
     return num1*num2;
 }
 console.log(multiply(5,6));
+
 function divide(num1: number, num2: number): number {
     return (num1/num2);
 }
 const res = divide(7,2);
 console.log(Math.round(res));
+
+//Optional Parameters - Sometimes parameter may not exist.
+function call(name?: string) {
+    console.log(name || 'John');
+}
+call(); //No problem if argument didn't passed, because we made it optional;
+call('Richu');
+
+function salute(name: string = 'Guest') {
+    console.log(`hi, ${name}`);
+}
+salute();
+salute('Pathu');
