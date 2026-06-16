@@ -52,13 +52,52 @@ let child: {
 }; 
 //console.log(child);
 
+//Type Alias - Instead of repeating object types, we define a object type and re-use it.
+/*
+<--- BAD CODE --->
+const candidate1: {
+    name: string,
+    age: number;
+} = {
+    name: 'Jabir',
+    age: 32
+}
+
+const candidate2: {
+    name: string,
+    age: number
+} = {
+    name: 'Twaiba',
+    age: 5
+ }
+*/
+type player= {
+    name: string;
+    age: number;
+}
+
+const player1: player = {
+    name: 'Messi',
+    age: 35
+}
+const player2: player = {
+    name: 'Cristiano',
+    age: 40
+}
+const player3: player = {
+    name: 'Neymar',
+    age: 27
+}
+console.log(player1);
+console.log(`${player1.name} \n${player2.age} \n${player3.name}`)
+
 
 //Function declaration
 function add(a:number, b:number) {
     return a+b;
 }
 const result = add(5,7);
-console.log(result);
+//console.log(result);
 
 //Function declaration with return type
 function greet(name: string): string {
@@ -80,17 +119,17 @@ function isEven(num: number): boolean {
 function multiply(num1: number, num2: number): number {
     return num1*num2;
 }
-console.log(multiply(5,6));
+//console.log(multiply(5,6));
 
 function divide(num1: number, num2: number): number {
     return (num1/num2);
 }
 const res = divide(7,2);
-console.log(Math.round(res));
+//console.log(Math.round(res));
 
 //Optional Parameters - Sometimes parameter may not exist.
 function call(name?: string) {
-    console.log(name || 'John');
+    console.log(name || 'Ahmed');
 }
 call(); //No problem if argument didn't passed, because we made it optional;
 call('Richu');

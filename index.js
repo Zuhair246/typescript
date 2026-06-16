@@ -8,6 +8,12 @@ name = 'Fathima';
 age = 15;
 isStudent = true;
 //console.log(`name: ${name}, age: ${age}, student: ${isStudent}`);
+//Union Types - A variable can have multiple types.
+//eg: API response can be 1 or 'd1';
+let id;
+id = 123;
+id = 'e1c33435e';
+//id = false; ❌
 //Array declaration
 let students = [6, 2, 9];
 //console.log(students);
@@ -31,13 +37,26 @@ let student = {
 let child = {
     name: 'Zuhair',
 };
-//console.log(child);
+const player1 = {
+    name: 'Messi',
+    age: 35
+};
+const player2 = {
+    name: 'Cristiano',
+    age: 40
+};
+const player3 = {
+    name: 'Neymar',
+    age: 27
+};
+console.log(player1);
+console.log(`${player1.name} \n${player2.age} \n${player3.name}`);
 //Function declaration
 function add(a, b) {
     return a + b;
 }
 const result = add(5, 7);
-console.log(result);
+//console.log(result);
 //Function declaration with return type
 function greet(name) {
     return `Hello! ${name}👋`;
@@ -55,15 +74,15 @@ function isEven(num) {
 function multiply(num1, num2) {
     return num1 * num2;
 }
-console.log(multiply(5, 6));
+//console.log(multiply(5,6));
 function divide(num1, num2) {
     return (num1 / num2);
 }
 const res = divide(7, 2);
-console.log(Math.round(res));
+//console.log(Math.round(res));
 //Optional Parameters - Sometimes parameter may not exist.
 function call(name) {
-    console.log(name || 'John');
+    console.log(name || 'Ahmed');
 }
 call(); //No problem if argument didn't passed, because we made it optional;
 call('Richu');
