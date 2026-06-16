@@ -9,6 +9,13 @@ isStudent = true;
 
 //console.log(`name: ${name}, age: ${age}, student: ${isStudent}`);
 
+//Union Types - A variable can have multiple types.
+//eg: API response can be 1 or 'd1';
+let id: number | string;
+id = 123;
+id = 'e1c33435e';
+//id = false; ❌
+
 
 //Array declaration
 let students: number[] = [6,2,9] ;
@@ -93,3 +100,4 @@ function salute(name: string = 'Guest') {
 }
 salute();
 salute('Pathu');
+
