@@ -71,20 +71,20 @@ const candidate2: {
     age: 5
  }
 */
-type player= {
+type Player= {
     name: string;
     age: number;
 }
 
-const player1: player = {
+const player1: Player = {
     name: 'Messi',
     age: 35
 }
-const player2: player = {
+const player2: Player = {
     name: 'Cristiano',
     age: 40
 }
-const player3: player = {
+const player3: Player = {
     name: 'Neymar',
     age: 27
 }
@@ -140,3 +140,20 @@ function salute(name: string = 'Guest') {
 salute();
 salute('Pathu');
 
+function findGrade(mark: number) :string {
+    if(mark<0 || mark>100) return 'Invalid marks';
+    if(mark>=90) return 'A';
+    if(mark>=80) return 'B';
+    if(mark>=70) return 'C';
+    if(mark>=60) return 'D';
+    return 'F';
+}
+/*
+console.log(findGrade(95));
+console.log(findGrade(105));
+console.log(findGrade(75));
+console.log(findGrade(65));
+console.log(findGrade(35));
+console.log(findGrade(-9));
+console.log(findGrade(0));
+*/

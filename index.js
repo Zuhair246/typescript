@@ -91,4 +91,24 @@ function salute(name = 'Guest') {
 }
 salute();
 salute('Pathu');
+function findGrade(mark) {
+    if (mark < 0 || mark > 100)
+        return 'Invalid marks';
+    if (mark >= 90)
+        return 'A';
+    if (mark >= 80)
+        return 'B';
+    if (mark >= 70)
+        return 'C';
+    if (mark >= 60)
+        return 'D';
+    return 'F';
+}
+console.log(findGrade(95));
+console.log(findGrade(105));
+console.log(findGrade(75));
+console.log(findGrade(65));
+console.log(findGrade(35));
+console.log(findGrade(-9));
+console.log(findGrade(0));
 //# sourceMappingURL=index.js.map
