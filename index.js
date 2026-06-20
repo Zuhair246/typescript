@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// Variable declaration.
+// Variable declaration - Explicit (Defining) types.
 let name = 'Ajmal';
 let age = 18;
 var isStudent = false;
@@ -8,6 +8,9 @@ name = 'Fathima';
 age = 15;
 isStudent = true;
 //console.log(`name: ${name}, age: ${age}, student: ${isStudent}`);
+// Infer (Implicit) types. TS automatically sets the data type of the variable.
+let designation = 'Manager';
+// designation = 13245; ❌
 //Union Types - A variable can have multiple types.
 //eg: API response can be 1 or 'd1';
 let id;
@@ -104,6 +107,7 @@ function findGrade(mark) {
         return 'D';
     return 'F';
 }
+/*
 console.log(findGrade(95));
 console.log(findGrade(105));
 console.log(findGrade(75));
@@ -111,4 +115,11 @@ console.log(findGrade(65));
 console.log(findGrade(35));
 console.log(findGrade(-9));
 console.log(findGrade(0));
+*/
+//Tuple - Array with fixed types and fixed positions.
+let details;
+details = ['Muneer', 19];
+// details = [19. 'Muneer']; ❌
+let apiResponse;
+apiResponse = [200, 'Success'];
 //# sourceMappingURL=index.js.map

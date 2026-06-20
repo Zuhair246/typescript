@@ -1,4 +1,4 @@
-// Variable declaration.
+// Variable declaration - Explicit (Defining) types.
 let name:string = 'Ajmal';
 let age:number = 18;
 var isStudent:boolean = false;
@@ -8,6 +8,10 @@ age = 15;
 isStudent = true;
 
 //console.log(`name: ${name}, age: ${age}, student: ${isStudent}`);
+
+// Infer (Implicit) types. TS automatically sets the data type of the variable.
+let designation = 'Manager';
+// designation = 13245; ❌
 
 //Union Types - A variable can have multiple types.
 //eg: API response can be 1 or 'd1';
@@ -91,6 +95,28 @@ const player3: Player = {
 console.log(player1);
 console.log(`${player1.name} \n${player2.age} \n${player3.name}`)
 
+// Similar like 'type' we can use 'interface' also; name of the type/interface class should be capital and interface need not need '=' sign.
+interface Cutomer {
+    name?: string;
+    price: number;
+    paid: boolean;
+}
+
+const customer1: Cutomer = {
+    name: 'Lana',
+    price: 220,
+    paid: true
+}
+const customer2: Cutomer = {
+    price: 300,
+    paid: false,
+    name: 'Nahila'
+}
+const customer3: Cutomer = {
+    paid: true,
+    price: 500,
+    name: 'Uvais'
+}
 
 //Function declaration
 function add(a:number, b:number) {
@@ -157,3 +183,14 @@ console.log(findGrade(35));
 console.log(findGrade(-9));
 console.log(findGrade(0));
 */
+
+
+//Tuple - Array with fixed types and fixed positions.
+let details: [string, number];
+details = ['Muneer', 19];
+// details = [19. 'Muneer']; ❌
+
+let apiResponse: [number, string];
+apiResponse = [200, 'Success'];
+
+
