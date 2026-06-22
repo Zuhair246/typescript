@@ -54,6 +54,21 @@ const player3 = {
 };
 console.log(player1);
 console.log(`${player1.name} \n${player2.age} \n${player3.name}`);
+const customer1 = {
+    name: 'Lana',
+    price: 220,
+    paid: true
+};
+const customer2 = {
+    price: 300,
+    paid: false,
+    name: 'Nahila'
+};
+const customer3 = {
+    paid: true,
+    price: 500,
+    name: 'Uvais'
+};
 //Function declaration
 function add(a, b) {
     return a + b;
@@ -89,11 +104,23 @@ function call(name) {
 }
 call(); //No problem if argument didn't passed, because we made it optional;
 call('Richu');
+//Default parameter.
 function salute(name = 'Guest') {
     console.log(`hi, ${name}`);
 }
 salute();
 salute('Pathu');
+//Passing type object to a fn as parameter.
+function squad(player1) {
+    return player1.name;
+}
+;
+console.log(`Player is: ${squad(player1)}`);
+//passing inline object as parameter.
+function datas({ name, age }) {
+    return age;
+}
+console.log(datas({ name: 'Ahmed', age: 26 }));
 function findGrade(mark) {
     if (mark < 0 || mark > 100)
         return 'Invalid marks';

@@ -118,6 +118,10 @@ const customer3: Cutomer = {
     name: 'Uvais'
 }
 
+//Defining custom types - We can define fixed values for a variable by setting it as a type variable, so that we can access default values.
+type Status = 'Pending' | 'Paid' | 'Failed';
+const paymentStatus: Status = 'Paid';
+
 //Function declaration
 function add(a:number, b:number) {
     return a+b;
@@ -130,6 +134,8 @@ function greet(name: string): string {
     return `Hello! ${name}👋`
 }
 //console.log(greet('Zuhair'));
+const show = greet('sharafu'); // if we assign this function call to a variable, we can access all the methods of that data type; 
+// like .toUpperCase() for string, .toFixed() for number, etc.
 
 function isEven(num: number): boolean {
     return num%2 === 0;
@@ -160,11 +166,24 @@ function call(name?: string) {
 call(); //No problem if argument didn't passed, because we made it optional;
 call('Richu');
 
+//Default parameter.
 function salute(name: string = 'Guest') {
     console.log(`hi, ${name}`);
 }
 salute();
 salute('Pathu');
+
+//Passing type object to a fn as parameter.
+function squad(player1: Player) {
+    return player1.name;
+};
+console.log(`Player is: ${squad(player1)}`);
+
+//passing inline object as parameter; use this only if minimum properties exist.
+function datas ({name, age}: {name: string, age: number}) {
+    return age;
+}
+console.log(datas({name: 'Ahmed', age: 26}));
 
 function findGrade(mark: number) :string {
     if(mark<0 || mark>100) return 'Invalid marks';
@@ -192,5 +211,4 @@ details = ['Muneer', 19];
 
 let apiResponse: [number, string];
 apiResponse = [200, 'Success'];
-
 
