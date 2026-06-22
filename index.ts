@@ -282,3 +282,16 @@ const agent1 = getDetails<userDetail>(user1);
 const agent2 = getDetails<adminDetail>(Admin1);
 
 agent1.name; // We can access properties like this.
+
+
+//Enum - we set pre-set values. we can access the values by index.
+enum orderStatus {
+    PENDING,
+    PACKED,
+    ORDERED,
+    SHIPPED,
+    OUT_FOR_DELIVERY,
+    DELIVERED
+};
+console.log(orderStatus.ORDERED);
+console.log(orderStatus[1]);
