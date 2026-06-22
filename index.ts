@@ -118,7 +118,7 @@ const customer3: Cutomer = {
     name: 'Uvais'
 }
 
-//Defining custom types - We can define fixed values for a variable by setting it as a type variable, so that we can access default values.
+//Named types - Defining custom types - We can define fixed values for a variable by setting it as a type variable, so that we can access default values.
 type Status = 'Pending' | 'Paid' | 'Failed';
 const paymentStatus: Status = 'Paid';
 
@@ -202,6 +202,19 @@ console.log(findGrade(35));
 console.log(findGrade(-9));
 console.log(findGrade(0));
 */
+
+
+//Function overloading - we can make return type according to our input type using a single function;
+//This is useful when we needed to process multiple type using a single fn, but prevent invalid processing; like adding 2 arrays or objects.
+function addition(a:number, b:number):number;
+function addition(a:string, b:string): string;
+function addition(a:number|string, b:string|number): number|string;
+function addition(a:any, b:any): any {
+    return a+b;
+}
+console.log(addition(1,8));
+console.log(addition('A','t'));
+console.log(addition('a',9));
 
 
 //Tuple - Array with fixed types and fixed positions.

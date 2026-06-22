@@ -69,6 +69,7 @@ const customer3 = {
     price: 500,
     name: 'Uvais'
 };
+const paymentStatus = 'Paid';
 //Function declaration
 function add(a, b) {
     return a + b;
@@ -80,6 +81,8 @@ function greet(name) {
     return `Hello! ${name}👋`;
 }
 //console.log(greet('Zuhair'));
+const show = greet('sharafu'); // if we assign this function call to a variable, we can access all the methods of that data type; 
+// like .toUpperCase() for string, .toFixed() for number, etc.
 function isEven(num) {
     return num % 2 === 0;
 }
@@ -116,7 +119,7 @@ function squad(player1) {
 }
 ;
 console.log(`Player is: ${squad(player1)}`);
-//passing inline object as parameter.
+//passing inline object as parameter; use this only if minimum properties exist.
 function datas({ name, age }) {
     return age;
 }
@@ -134,15 +137,12 @@ function findGrade(mark) {
         return 'D';
     return 'F';
 }
-/*
-console.log(findGrade(95));
-console.log(findGrade(105));
-console.log(findGrade(75));
-console.log(findGrade(65));
-console.log(findGrade(35));
-console.log(findGrade(-9));
-console.log(findGrade(0));
-*/
+function addition(a, b) {
+    return a + b;
+}
+console.log(addition(1, 8));
+console.log(addition('A', 't'));
+console.log(addition('a', 9));
 //Tuple - Array with fixed types and fixed positions.
 let details;
 details = ['Muneer', 19];
