@@ -212,9 +212,9 @@ function addition(a:number|string, b:string|number): number|string;
 function addition(a:any, b:any): any {
     return a+b;
 }
-console.log(addition(1,8));
-console.log(addition('A','t'));
-console.log(addition('a',9));
+// console.log(addition(1,8));
+// console.log(addition('A','t'));
+// console.log(addition('a',9));
 
 
 //Tuple - Array with fixed types and fixed positions.
@@ -225,3 +225,60 @@ details = ['Muneer', 19];
 let apiResponse: [number, string];
 apiResponse = [200, 'Success'];
 
+
+//Generics - Instead of manually defining input and return types or by function overloading,
+// this will automatically detect input type and return proper type.
+function getAge<T> (age: T) :T {
+    return age;
+}
+console.log(getAge(20));
+console.log(getAge('31'));
+// we can also define what type of input for a fn while function call, like below;
+getAge<number> (63);
+getAge<string> ('63');
+
+// We can use properties of one type object or interface to another by the syntax below;
+type userDetails = {
+    name: string;
+    age: number;
+}
+type adminDetails = userDetails & {
+    role: string;
+}
+const user1: userDetails = {
+    name: 'Ahmed',
+    age: 25
+};
+const admin1: adminDetails = {
+    name: 'Zuckerburg',
+    age: 40,
+    role: 'CEO'
+}
+
+/*<-or->*/
+
+interface userDetail {
+    name: string,
+    age: number
+}
+interface adminDetail extends userDetail {
+    role: string
+}
+const User1: userDetail = {
+    name: "Hisham",
+    age:21
+}
+const Admin1: adminDetail = {
+    name: "Nikhil",
+    age: 36,
+    role: 'Admin'
+}
+
+//Using object in Generics⬇️
+function getDetails<T> (details: T) :T {
+    return details;
+}
+const agent1 = getDetails<userDetail>(user1);
+const agent2 = getDetails<adminDetail>(Admin1);
+
+agent1.name; // We can access properties like this.

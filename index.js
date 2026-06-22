@@ -140,13 +140,20 @@ function findGrade(mark) {
 function addition(a, b) {
     return a + b;
 }
-console.log(addition(1, 8));
-console.log(addition('A', 't'));
-console.log(addition('a', 9));
+// console.log(addition(1,8));
+// console.log(addition('A','t'));
+// console.log(addition('a',9));
 //Tuple - Array with fixed types and fixed positions.
 let details;
 details = ['Muneer', 19];
 // details = [19. 'Muneer']; ❌
 let apiResponse;
 apiResponse = [200, 'Success'];
+//Generics - Instead of manually defining input and return types or by function overloading,
+// this will automatically detect input type and return proper type.
+function getAge(age) {
+    return age;
+}
+console.log(getAge(20));
+console.log(getAge('31'));
 //# sourceMappingURL=index.js.map
