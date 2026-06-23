@@ -295,3 +295,27 @@ enum orderStatus {
 };
 console.log(orderStatus.ORDERED);
 console.log(orderStatus[1]);
+//We can also change the starting index by assigning a value, like; PENDING=1. So following elements' index value will automatically increment.
+
+function getStatus(orderId: string, status: orderStatus) {
+    console.log(`${orderId} - ${status}`);
+}
+getStatus('a1d2', orderStatus.PACKED);
+
+//as const - making a variable constant (read-only) using typescript method. So, we can't reassaign another value to it.
+let desktop = 'Acer' as const;
+//❌desktop = 'Dell'; 
+
+
+//keyof typeof
+const statusType = {
+    PENDING: 'pending',
+    COMPLETED: 'success',
+    FAILED: 'failed'
+} as const;
+
+function getPaymentStatus (paymetId: string, status: keyof typeof statusType) {
+    console.log(paymetId, '=>', statusType[status]);
+}
+
+getPaymentStatus('568dee9', 'COMPLETED');

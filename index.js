@@ -156,4 +156,63 @@ function getAge(age) {
 }
 console.log(getAge(20));
 console.log(getAge('31'));
+// we can also define what type of input for a fn while function call, like below;
+getAge(63);
+getAge('63');
+const user1 = {
+    name: 'Ahmed',
+    age: 25
+};
+const admin1 = {
+    name: 'Zuckerburg',
+    age: 40,
+    role: 'CEO'
+};
+const User1 = {
+    name: "Hisham",
+    age: 21
+};
+const Admin1 = {
+    name: "Nikhil",
+    age: 36,
+    role: 'Admin'
+};
+//Using object in Generics⬇️
+function getDetails(details) {
+    return details;
+}
+const agent1 = getDetails(user1);
+const agent2 = getDetails(Admin1);
+agent1.name; // We can access properties like this.
+//Enum - we set pre-set values. we can access the values by index.
+var orderStatus;
+(function (orderStatus) {
+    orderStatus[orderStatus["PENDING"] = 0] = "PENDING";
+    orderStatus[orderStatus["PACKED"] = 1] = "PACKED";
+    orderStatus[orderStatus["ORDERED"] = 2] = "ORDERED";
+    orderStatus[orderStatus["SHIPPED"] = 3] = "SHIPPED";
+    orderStatus[orderStatus["OUT_FOR_DELIVERY"] = 4] = "OUT_FOR_DELIVERY";
+    orderStatus[orderStatus["DELIVERED"] = 5] = "DELIVERED";
+})(orderStatus || (orderStatus = {}));
+;
+console.log(orderStatus.ORDERED);
+console.log(orderStatus[1]);
+//We can also change the starting index by assigning a value, like; PENDING=1. So following elements' index value will automatically increment.
+function getStatus(orderId, status) {
+    console.log(`${orderId} - ${status}`);
+}
+getStatus('a1d2', orderStatus.PACKED);
+//as const - making a variable constant (read-only) using typescript method. So, we can't reassaign another value to it.
+let desktop = 'Acer';
+//❌desktop = 'Dell'; 
+//keyof typeof
+const statusType = {
+    PENDING: 'pending',
+    COMPLETED: 'success',
+    FAILED: 'failed'
+};
+function getPaymentStatus(paymetId, status) {
+    console.log(paymetId, '=>', statusType[status]);
+}
+getPaymentStatus('568dee9', 'COMPLETED');
 //# sourceMappingURL=index.js.map
