@@ -119,6 +119,7 @@ const customer3: Cutomer = {
 }
 
 //Named types - Defining custom types - We can define fixed values for a variable by setting it as a type variable, so that we can access default values.
+//Union type.
 type Status = 'Pending' | 'Paid' | 'Failed';
 const paymentStatus: Status = 'Paid';
 
@@ -319,3 +320,47 @@ function getPaymentStatus (paymetId: string, status: keyof typeof statusType) {
 }
 
 getPaymentStatus('568dee9', 'COMPLETED');
+
+
+// Utility types.
+type Company = {
+    name: string,
+    hiring?: boolean,
+    salary: number
+};
+
+const company1: Readonly<Company> = {
+    name: 'Brototype',
+    hiring: false,
+    salary: 20_000
+}
+//❌company1.name='Bridgeon';
+
+const company2: Partial<Company> = {
+    name: 'Cross Roads'
+} // No error bcoz all keys are optional by partial utility.
+
+const company3: Required<Company> = {
+    name: 'Techno Dot',
+    hiring: true,
+    salary: 10_000
+}  // Even if hiring is optional in Company type, for compnay3 it's required bcoz of Required utility.
+
+const company4: Pick<Company, 'name' | 'salary'> = {
+    name: 'Luminar',
+    salary: 5_000
+}
+
+const company5: Omit<Company, 'salary' | 'hiring'> = {
+    name: 'Luminar',
+}
+
+type deliveryStatus = 'Out for delivery' | 'Delivered' | 'Returned';
+const delivery1: Exclude<deliveryStatus, 'Returned'> = 'Delivered';
+
+type Trip = Record<string, string | number>;
+const trip1: Trip = {
+    destination: 'Banglore',
+    distance: 200,
+    //❌approved: false
+}

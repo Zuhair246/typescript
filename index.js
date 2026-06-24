@@ -215,4 +215,31 @@ function getPaymentStatus(paymetId, status) {
     console.log(paymetId, '=>', statusType[status]);
 }
 getPaymentStatus('568dee9', 'COMPLETED');
+const company1 = {
+    name: 'Brototype',
+    hiring: false,
+    salary: 20_000
+};
+//❌company1.name='Bridgeon';
+const company2 = {
+    name: 'Cross Roads'
+}; // No error bcoz all keys are optional by partial utility.
+const company3 = {
+    name: 'Techno Dot',
+    hiring: true,
+    salary: 10_000
+}; // Even if hiring is optional in Company type, for compnay3 it's required bcoz of Required utility.
+const company4 = {
+    name: 'Luminar',
+    salary: 5_000
+};
+const company5 = {
+    name: 'Luminar',
+};
+const delivery1 = 'Delivered';
+const trip1 = {
+    destination: 'Banglore',
+    distance: 200,
+    //❌approved: false
+};
 //# sourceMappingURL=index.js.map
