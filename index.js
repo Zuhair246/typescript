@@ -242,4 +242,43 @@ const trip1 = {
     distance: 200,
     //❌approved: false
 };
+const journty1 = {
+    designation: 'Goa',
+    approved: true,
+    //❌daf: 565
+};
+//any, unknown, never, void, null
+let adminName = 'Kilivayil';
+adminName.toUpperCase();
+//adminName.toFixed();
+let Name = 'Kilivayil';
+const userName = Name;
+userName.toUpperCase();
+function greetUser(message) {
+    console.log(message);
+}
+const supplier1 = {
+    name: 'Sabu',
+    getName() {
+        console.log(this.name);
+    },
+};
+supplier1.getName();
+/*
+function throwError(message: string): never {
+    throw new Error(message);
+}
+throwError('Inefficient');
+*/
+let supplierName;
+function get() {
+    if (supplierName) {
+        console.log(supplierName);
+    }
+    else if (supplierName === null) {
+        console.log('unknown supplier');
+    }
+}
+supplierName = 'Sanjay';
+get();
 //# sourceMappingURL=index.js.map

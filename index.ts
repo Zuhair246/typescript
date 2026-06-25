@@ -364,3 +364,60 @@ const trip1: Trip = {
     distance: 200,
     //❌approved: false
 }
+
+type Journey = {
+	[index: string] : string | boolean;
+};
+const journty1: Journey = {
+    designation: 'Goa',
+    approved: true,
+    //❌daf: 565
+}
+
+
+//any, unknown, never, void, null
+
+let adminName: any = 'Kilivayil';
+adminName.toUpperCase();
+//adminName.toFixed();
+
+let Name: unknown = 'Kilivayil';
+const userName = Name as string;
+userName.toUpperCase();
+
+function greetUser(message: string) : void {
+    console.log(message);
+}
+// greetUser('ji');
+
+type Supplier = {
+    name: string,
+    getName: () => void;
+}
+const supplier1: Supplier = {
+    name: 'Sabu',
+    getName() {
+        console.log(this.name);
+    },
+}
+supplier1.getName();
+/*
+function throwError(message: string): never {
+    throw new Error(message);
+}
+throwError('Inefficient');
+*/
+let supplierName : string | null;
+function get() {
+    if(supplierName) {
+        console.log(supplierName);
+    }else if (supplierName === null) {
+        console.log('unknown supplier');
+    }
+}
+supplierName = 'Sanjay';
+//get()
+
+//Literal types.
+let role: 'Admin' | 'User' | 'Vendor';
+role = 'User'
