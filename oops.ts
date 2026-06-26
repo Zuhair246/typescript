@@ -15,7 +15,7 @@ const student1 = new Student(1, 'Zuhair', 26);
 //console.log(student1);
 
 
-//Parameter Properties.
+//Parameter Properties - Access Modifiers.
 class Car {
     constructor(
         public brand: string,
