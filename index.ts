@@ -420,4 +420,5 @@ supplierName = 'Sanjay';
 
 //Literal types.
 let role: 'Admin' | 'User' | 'Vendor';
-role = 'User'
+role = 'User';
+

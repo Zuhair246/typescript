@@ -280,5 +280,8 @@ function get() {
     }
 }
 supplierName = 'Sanjay';
-get();
+//get()
+//Literal types.
+let role;
+role = 'User';
 //# sourceMappingURL=index.js.map
