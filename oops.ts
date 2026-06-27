@@ -165,7 +165,68 @@ class Candidate{
     }
 }
 const candidate1 = new Candidate('Ajmal,', 50);
-console.log(candidate1.Marks);
+//console.log(candidate1.Marks);
 candidate1.updateMark = 75;
-console.log(candidate1.Marks);
+//console.log(candidate1.Marks);
 
+//Static Members.
+class Teacher {
+    static college: string = 'Govt. College Victoria, Palakkad';
+    constructor(
+        public department: string
+    ) {}
+}
+
+const physics = new Teacher('Physics');
+console.log(physics.department);
+console.log(Teacher.college);
+
+class Calculator {
+    static add(a: number, b: number): number {
+        return a+b;
+    }
+ }
+//console.log(Calculator.add(8,9));
+
+class Player {
+    static playerCount = 0;
+    constructor(
+        public name: string,
+    ){
+        Player.playerCount++;
+    }
+}
+
+const messi = new Player('Messi');
+const ronaldo = new Player('Cristiano Ronaldo');
+const neymar = new Player('Neymar');
+const embape = new Player('Embape');
+//console.log(Player.playerCount);
+
+
+//Inheritance
+class Person {
+    constructor (
+        public name: string,
+        public age: number
+    ){};
+
+    display(): void {
+        console.log(this.name);
+    }
+}
+
+class Security extends Person {
+    constructor(
+        name: string,
+        age: number,
+        public gateNo: number
+    ){
+        super(name, age);
+    }
+}
+
+const security1 = new Security('Das', 45, 3);
+console.log(security1.name);
+security1.display();
+console.log(security1.gateNo);
