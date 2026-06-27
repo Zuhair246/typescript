@@ -60,3 +60,89 @@ class Dog extends Animal {
 }
 const tom = new Dog('Tom');
 tom.bark();
+
+//Workouts:- 
+
+class CAR{
+    constructor(
+        public brand: string,
+        public model: string,
+        private price: number
+    ){};
+
+    showDetails() :void {
+        console.log({
+            brand: this.brand,
+            model: this.model,
+            price: this.price
+        });
+    };
+
+    changePrice(newPrice: number) :void {
+        if(newPrice<=0) throw new Error('Invalid Price');
+        this.price = newPrice;
+    }
+}
+
+const baleno = new CAR('Maruthi Suzuki', 'Baleno', 25_00_000);
+baleno.showDetails();
+baleno.changePrice(24_50_000);
+baleno.showDetails();
+
+
+class BankAccount {
+    constructor(
+        public accountHolder: string,
+        private balance: number
+    ){};
+
+    deposit(amount: number): void {
+        this.balance += amount;
+    };
+
+    withdraw(amount: number): void {
+        if(amount<=0) throw new Error('Invalid amount');
+
+        if(amount>this.balance){
+            throw new Error('Insufficient balance')
+        }else{
+            this.balance -= amount;
+        }
+    }
+
+    showBalance(): void {
+        console.log(this.balance);
+    }
+}
+
+const holder1 = new BankAccount('Zuhair', 1000);
+holder1.deposit(500);
+holder1.showBalance();
+holder1.withdraw(250);
+holder1.showBalance();
+
+
+class Employee {
+    public name: string;
+    private salary: number;
+
+    constructor(name: string, salary: number) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    increaseSalary(amount: number) : void {
+        this.salary += amount;
+    }
+
+    showSalary() {
+        console.log(this.salary);
+    }
+}
+
+const employee1 = new Employee('Savad', 1500);
+employee1.showSalary();
+employee1.increaseSalary(313);
+employee1.showSalary();
+//console.log(employee1.salary); ❌
+
