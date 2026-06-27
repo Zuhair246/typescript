@@ -46,6 +46,7 @@ const account1 = new Account(2000);
 account1.showBalance();
 //❌console.log(account1.balance);
 
+
 class Animal {
     protected name: string;
     constructor(name: string) {
