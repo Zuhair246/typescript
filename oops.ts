@@ -42,8 +42,8 @@ class Account {
         console.log(this.balance);
     }
 }
-const account1 = new Account(2000);
-account1.showBalance();
+ const account1 = new Account(2000);
+// account1.showBalance();
 //❌console.log(account1.balance);
 
 
@@ -60,7 +60,7 @@ class Dog extends Animal {
     }
 }
 const tom = new Dog('Tom');
-tom.bark();
+// tom.bark();
 
 //Workouts:- 
 
@@ -86,9 +86,9 @@ class CAR{
 }
 
 const baleno = new CAR('Maruthi Suzuki', 'Baleno', 25_00_000);
-baleno.showDetails();
-baleno.changePrice(24_50_000);
-baleno.showDetails();
+// baleno.showDetails();
+// baleno.changePrice(24_50_000);
+// baleno.showDetails();
 
 
 class BankAccount {
@@ -117,10 +117,10 @@ class BankAccount {
 }
 
 const holder1 = new BankAccount('Zuhair', 1000);
-holder1.deposit(500);
-holder1.showBalance();
-holder1.withdraw(250);
-holder1.showBalance();
+// holder1.deposit(500);
+// holder1.showBalance();
+// holder1.withdraw(250);
+// holder1.showBalance();
 
 
 class Employee {
@@ -141,9 +141,31 @@ class Employee {
     }
 }
 
-const employee1 = new Employee('Savad', 1500);
-employee1.showSalary();
-employee1.increaseSalary(313);
-employee1.showSalary();
+ const employee1 = new Employee('Savad', 1500);
+// employee1.showSalary();
+// employee1.increaseSalary(313);
+// employee1.showSalary();
 //console.log(employee1.salary); ❌
+
+
+//Getters and Setters
+class Candidate{
+    constructor(
+        public name: string,
+        private marks: number
+    ){};
+
+    get Marks() {
+        return this.marks;
+    }
+
+    set updateMark(value: number) {
+        if(value>100 || value<0) throw new Error ('Invalid marks');
+        this.marks = value;
+    }
+}
+const candidate1 = new Candidate('Ajmal,', 50);
+console.log(candidate1.Marks);
+candidate1.updateMark = 75;
+console.log(candidate1.Marks);
 
